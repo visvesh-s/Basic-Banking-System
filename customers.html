@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+html {
+  font-size: 14px;
+}
+h1 {
+  font-size: 4rem;
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 14px
+  }
+}
+.myImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+@media (max-width: 768px) {
+  .myImg {
+     width: 100%
+   }
+}
+
+/*nav bar*/
+
+.icon-bar {
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  overflow: auto;
+}
+
+.icon-bar a {
+  float: left;
+  width: 20%;
+  text-align: center;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+
+.icon-bar a:hover {
+  background-color: rgb(70, 68, 68);
+}
+.active {
+  background-color: #eba983;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+/*index pg*/
+img{
+    width: 100%;
+    height: auto;
+}
+h2,.Balance,h3,p{
+    text-align: center;
+    font-size: larger;   
+}
+p{
+    font-size: 20px; 
+}
+h2,h3{
+    font-size: x-large;
+    color: antiquewhite;
+}
+
+h5{
+    background-color:peachpuff;
+    text-align: center;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    padding: 0.25rem;
+}
+body{
+    background-color:rgb(255, 255, 255);
+    margin:0 auto;
+}
+/*table css*/
+table,th,td{
+    border:1px solid black;
+    height: 50px;
+    text-align: center;
+}
+table{
+    width: 100%;
+    height: auto;
+    border-collapse:collapse;
+    font-size: larger;
+}
+th{
+    background-color:rgb(211, 181, 197);
+}
+tr{
+    background-color:rgb(40, 167, 172);
+}
+tr:nth-child(even) {
+    background-color: #3062ac;
+}
+tr:hover{
+    background-color:rgb(0, 0, 0);
+}
+td{
+    color: white;
+}
+.Balance{
+    color:rgb(0, 0, 0);
+    font-size:28px;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+ 
+}
+/*button*/
+button{
+  width: 7rem;
+  display: block;
+}
+
+.zoom {
+    transition:ease-in; /* Animation */
+}
+.zoom:hover {
+  transform: scale(1.25); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+/*form css*/
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right:35%;
+    border: 3px solid #3a0be4;
+    z-index: 20;
+}
+.form-container {
+    max-width: 300px;
+    padding: 40px;
+    background-color: white;
+    border: 1px solid black;
+}
+.form-container input[type=text],.form-container input[type=password]{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+.form-container .cancel {
+    background-color: rgb(150, 51, 51);
+} 
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}  
+/*transaction history model*/  
+.modal {
+    display:none; 
+    position: fixed; 
+    z-index: 1;
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+.modal-content {
+    background-color: #fefefe;
+    width: 600px;
+    height: 400px;
+    max-height: 100%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+section {
+    background-color: #f5d6c5;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    padding: 1rem;
+}
+
+#viewButton{
+        width: 20%;
+}
+@media screen {
+    #myButton{
+        width:50%;
+
+}
+
+}
+
+#transButton{
+    width: 20%;
+}
+@media screen {
+    #myButton{
+        width: fit-content;
+}
+
+}
+p{
+    font-size: 1.25rem;
+}
+aside {
+  margin-left: 15px;
+  float: right;
+   
+}
+
+@media (max-width: 768px) {
+    .btn-responsive {
+        padding:6px 6px;
+        font-size:90%;
+        line-height: 1;
+        border-radius:3px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .btn-responsive {
+        padding:4px 9px;
+        font-size:90%;
+        line-height: 1.2;
+    }
+}
+</style>
+</head>
+<body>
+
+<nav class="icon-bar">
+    <h1>OREO BANK</h1>
+  <a href="index.html"><i class="fa fa-home"></i><br>  HOME</a> 
+  <a href="customers.html" class="active"><i class="fa fa-users"></i><br>  CUSTOMERS</a> 
+    
+</nav>
+
+<header><h1 class="display-4" style="text-align: center; font-family:Georgia, 'Times New Roman', Times, serif;">OREO BANK</h1></header>
+<h5 class="display-6" style="text-align: center; font-family:Georgia, 'Times New Roman', Times, serif">CUSTOMERS</h5><br>
+<section>
+      <!--content-->
+      <p class="Balance">NAME : Pooja Venkatesan<br>NET BALANCE : &#x20B9;. <span id="myBalance">10000</span></p>
+      <center>
+      <button class="zoom btn btn-info btn-responsive" style="width:fit-content;" onclick="openForm()">TRANSFER MONEY</button>
+     
+      <button class="zoom btn btn-success btn-responsive" style="width:fit-content;" id="myBtn" type="button" onclick="transaction()" >TRANSACTION HISTORY</button> 
+      </center>
+      <br>
+      <!--form to send money-->
+      <div class="form-popup" id="myForm">
+          <form action="" class="form-container">
+              <p id="heading"><b>Enter The Details</b></p>
+              <label for="email">Email</label>
+              <input type="text" id="mailofreceiver" placeholder="Enter Email" name="email" required>
+              <label for="text">Amount</label>
+              <input type="text" id="amttobesent" placeholder="Enter Amount" required>
+              
+              <button type="button" class="zoom btn btn-info btn-responsive" onclick="sendMoney()"><b>Send Money</b></button>
+              <button type="button"  class="zoom btn btn-success btn-responsive cancel" onclick="closeForm()"><b>Close</b></button>
+          </form>
+      </div>
+      <!--transaction history-->
+      <div id="myModal" class="modal">
+          <div class="modal-content">
+              <p ><b>Transaction History</b></p>
+              <span class="close">&times;</span>
+              <ol id="transaction-history-body"></ol>
+          </div>
+      </div>
+      <!--customers info-->
+      <table>
+          <tr>
+              <th>S.No.</th>
+              <th>Name</th>
+              <th>Mail Address</th>
+              <th>Current Balance(in &#x20B9;)</th>
+          </tr>
+          <tr>
+              <td>1.</td>
+              <td>Divya</td>
+              <td>divya@gmail.com</td>
+              <td>
+                  <p id="divya@gmail.com">2000</p>
+              </td>
+          </tr>
+          <tr>
+              <td>2.</td>
+              <td>Dhansika</td>
+              <td>dhansika@gmail.com</td>
+              <td >
+                  <p id="dhansika@gmail.com">4000</p>
+              </td>
+          </tr>
+          <tr>
+              <td>3.</td>
+              <td>Varshini</td>
+              <td>varshini@gmail.com</td>
+              <td >
+                  <p id="varshini@gmail.com">1000</p>
+              </td>
+          </tr>
+          <tr>
+              <td>4.</td>
+              <td>Ramya</td>
+              <td>ramya@gmail.com</td>
+              <td >
+                  <p id="ramya@gmail.com">3200</p>
+              </td>
+          </tr>
+          <tr>
+              <td>5.</td>
+              <td>Gokul</td>
+              <td>gokul@gmail.com</td>
+              <td >
+                  <p id="gokul@gmail.com">4000</p>
+              </td>
+
+          </tr>
+          <tr>
+              <td>6.</td>
+              <td>Rahul</td>
+              <td>rahul@gmail.com</td>
+              <td>
+                  <p id="rahul@gmail.com">2900</p>
+              </td>
+
+          </tr>
+          <tr>
+              <td>7.</td>
+              <td>Roshini</td>
+              <td>roshini@gmail.com</td>
+              <td>
+                  <p id="roshini@gmail.com">5800</p>
+              </td>
+
+          </tr>
+          <tr>
+              <td>8.</td>
+              <td>Kamal</td>
+              <td>kamal@gmail.com</td>
+              <td>
+                  <p id="kamal@gmail.com">3800</p>
+              </td>
+
+          </tr>
+          <tr>
+              <td>9.</td>
+              <td>Sree</td>
+              <td>sree@gmail.com</td>
+              <td>
+                  <p id="sree@gmail.com">7200</p>
+              </td>
+          </tr>
+          <tr>
+              <td>10.</td>
+              <td>Swetha</td>
+              <td>swetha@gmail.com</td>
+              <td>
+                  <p id="swetha@gmail.com">4000</p>
+              </td>
+          </tr>
+      </table>  
+      
+</section>
+<script src="sparks.js">
+</script>
+</body>
+</html> 
